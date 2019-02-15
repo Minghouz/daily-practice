@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会员注册</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/headfoot.css">
+	<link rel="stylesheet" href="css/register.css">
+
+</head>
+<body>
+	<div id="header_top" class="wrap">
+		<div>
+			<a href="login.html">会员登录</a>
+			<a href="register.html">会员注册</a>
+		</div>
+		<div>
+			<a href="#">设为首页</a>
+			<a href="#">加入收藏</a>
+			<a href="#">在线留言</a>
+			<a href="#">手机站</a>
+		</div>
+	</div>
+	
+	<!-- logo -->
+	<div id="header_logo" class="wrap">
+		<h1><a href="#" title="首页">特色水果</a></h1>
+		<form action=""><input type="text"><i class="iconfont icon-yysousuo1"></i></form>
+		<div>
+			<a href="#"><img src="images/tmp1472805583_1290760_s.jpg" alt="" title="购物车">我的购物车<span>0</span>件商品 &gt;</a>
+		</div>
+	</div>
+	<!-- 导航 -->
+	<div id="nav" class="wrap">
+		<ul>
+			<li></li>
+			<li><a href="index.html">首页</a></li>
+			<li><a href="##">关于我们</a></li>
+			<li><a href="##">新闻中心</a></li>
+			<li><a href="html/details.html">产品中心</a></li>
+			<li><a href="##">联系我们</a></li>
+			<li><a href="##">在线留言</a></li>
+		</ul>
+	</div>
+    <!-- 注册表单 -->
+    <div class="form_box">
+    	<div class="h3"><span></span>会员注册页</div>
+		<div id="form">
+			<h3>已有会员?<a href="login.html">立即登录</a></h3>
+			<label for="name">用户名：</label><span class="point">*</span><input type="text" id="name"><span class="validation"></span><br/>
+			<label for="pwd">密码：</label><span class="point">*</span><input type="password" id="pwd"><span class="validation"></span><br/>
+			<label for="repwd">确认密码：</label><span class="point">*</span><input type="password" id="repwd"><span class="validation"></span><br/>
+			<label for="">密码强度：</label>
+			<div id="span">
+					<span></span><span></span><span></span>
+			</div><br/>
+			<label for="email">邮箱：</label><span class="point">*</span><input type="email" id="email"><span class="validation"></span><br/>
+			<label for="tel">电话号码：</label><span class="point">*</span><input type="text" id="tel"><span class="validation"></span><br/>
+			<label for = "code">验证码：</label><span class="point">*</span><input type="text" id="code"/>
+				<span id="codes"></span><span class="validation"></span><br/><br/><br/>
+			<input type="button" id="btn" value="注册">
+		</div>   	
+    </div>
+	<!-- 页脚 -->
+	<div id="footer">
+		<div class="footer_links">
+			<a href="">关于我们</a>
+			<a href="">经典案例</a>
+			<a href="">新闻动态</a>
+			<a href="">服务项目</a>
+			<a href="">咨询团队</a>
+			<a href="">联系我们</a>
+		</div>
+		<p>蜀ICP备17041164</p>
+		<p>www.tssgsc.com</p>
+	</div>
+	<!-- 分享到 -->
+	<div id="block">
+		<div class="tit"><span>分</span><span>享</span></div>
+		<h4>分享到</h4>
+		<div class="block_link">
+			<a href=""><img src="http://static.bshare.cn/frame/images/logos/s4/weixin.png" alt=""><span>一键分享</span></a>
+			<a href=""><img src="http://static.bshare.cn/frame/images/logos/s4/weixin.png" alt=""><span>一键分享</span></a>
+		</div>
+		<div class="block_footer"><a href="">+更多</a></div>
+	</div>
+
+	<!-- js文件 -->
+	<script type="text/javascript"  src="js/toolkit.js?new Date()"></script>
+	<script type="text/javascript" src = "js/headfoot.js?new Date()"></script>
+	<script type="text/javascript"  src="js/ajax.js?new Date()"></script>
+	<script>
+	var form = document.getElementById("form"); 
+	var uname = document.getElementById("name"); 
+	var upwd = document.getElementById("pwd"); 
+	var urepwd = document.getElementById("repwd"); 
+	var uemail = document.getElementById("email"); 
+	var utel = document.getElementById("tel"); 
+	var code = document.getElementById("code");
+	var Codes = document.getElementById("codes");
+	var span = document.getElementById("span");
+	var spans = span.getElementsByTagName("span");
+	var btn = document.getElementById("btn"); 
+console.log(spans)
+Codes.innerHTML = randomCode(6);
+/*表单验证*/
+	form.onclick = function(e){
+		var e = e||event;
+		var target = e.target||e.srcElement;
+		/*验证用户名*/
+		if(target.tagName == "INPUT"&&target.id =="name"){
+			
+			target.onblur = function(){
+				var nameval = target.value;
+				
+				if(reg.userName.test(nameval)){
+					target.nextElementSibling.innerHTML = "√用户名可用";
+					target.nextElementSibling.style.color = "green";
+				}else{
+					target.nextElementSibling.innerHTML = "×用户名不可用";
+					target.nextElementSibling.style.color = "red";
+				}
+			}	
+		}
+		/*验证密码*/
+		if(target.tagName == "INPUT"&&target.id =="pwd"){
+			
+			target.onblur = function(){
+				var psdval = target.value;
+				console.log(psdval);
+				console.log(reg);
+				if(reg.passWord.test(psdval)){
+					if(reg.number.test(psdval)||reg.string.test(psdval)){
+
+						spans[0].innerHTML = "低";
+						spans[0].style.background = "red";
+						spans[1].innerHTML = "";
+						spans[1].style.background = "#fff";
+						spans[2].innerHTML = " ";
+						spans[2].style.background = "#fff";
+					}else if(reg.strNum.test(psdval)){
+						spans[1].innerHTML = "中";
+						spans[1].style.background = "orange";
+						spans[0].innerHTML = "";
+						spans[0].style.background = "#fff";
+						spans[2].innerHTML = " ";
+						spans[2].style.background = "#fff";
+					}else{
+						spans[2].innerHTML = "高";
+						spans[2].style.background = "green";
+						spans[1].innerHTML = "";
+						spans[1].style.background = "#fff";
+						spans[0].innerHTML = " ";
+						spans[0].style.background = "#fff";
+					}
+					target.nextElementSibling.innerHTML = "√密码格式正确";
+					target.nextElementSibling.style.color = "green";
+
+				}else{
+					target.nextElementSibling.innerHTML = "×密码格式不正确";
+					target.nextElementSibling.style.color = "red";
+				}
+			}	
+		}
+
+		/*重复密码*/
+		if(target.tagName =="INPUT"&&target.id == "repwd"){
+			target.onblur = function(){
+				if(target.value == pwd.value){
+					
+					target.nextElementSibling.innerHTML = "√密码输入正确";
+					target.nextElementSibling.style.color = "green";
+
+				}else{
+					target.nextElementSibling.innerHTML = "×密码不一致";
+					target.nextElementSibling.style.color = "red";
+				}
+			}	
+		}
+
+		/*电子邮件*/
+		if(target.tagName =="INPUT"&&target.id == "email"){
+			target.onblur = function(){
+				var emailval = uemail.value;
+				if(reg.email.test(emailval)){
+					
+					target.nextElementSibling.innerHTML = "√邮箱可用";
+					target.nextElementSibling.style.color = "green";
+
+				}else{
+					target.nextElementSibling.innerHTML = "×邮箱格式不正确";
+					target.nextElementSibling.style.color = "red";
+				}
+			}	
+		}
+
+		/*电话号码*/
+		if(target.tagName =="INPUT"&&target.id == "tel"){
+			target.onblur = function(){
+				var telval = tel.value;
+				if(reg.tel.test(telval)){
+					console.log('yes!');
+					target.nextElementSibling.innerHTML = "√号码可用";
+					target.nextElementSibling.style.color = "green";
+
+				}else{
+					target.nextElementSibling.innerHTML = "×号码格式不正确";
+					target.nextElementSibling.style.color = "red";
+				}
+			}	
+		}
+
+		/*验证码*/
+		if(target.tagName == "INPUT"&& target.id == "code"){
+			target.onblur = function(){
+				if(target.value == Codes.innerHTML){
+					target.nextElementSibling.nextElementSibling.innerHTML ="√验证码输入正确";
+					target.nextElementSibling.nextElementSibling.style.color = "green";
+				}else{
+					target.nextElementSibling.nextElementSibling.innerHTML ="×验证码输入错误";
+					target.nextElementSibling.nextElementSibling.style.color = "red";
+				}
+			}
+			
+		}
+		if(target.tagName == "SPAN"&& target.id == "codes"){
+			target.onclick = function(){
+				target.innerHTML = randomCode(6);
+			}
+			
+		}
+	}
+
+
+/*向后台传递表单数据*/
+	btn.onclick = function(){
+		 ajax("post","http://localhost/work/Fresh-fruit/php/register.php",{uname:uname.value,upassword:upwd.value,uemail:uemail.value,utel:utel.value},function(data){
+		 	console.log(data);
+	 		if(data.status==1){
+	 			alert("注册成功！");
+	 			location.href="login.html";
+	 		}
+		 });
+	}
+	
+
+	</script>
+</body>
+</html>

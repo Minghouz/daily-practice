@@ -1,0 +1,97 @@
+@charset "utf-8";
+.form_box{
+	width: 1130px;
+	height: auto;
+	margin: 0px auto 20px;
+	border: 1px solid #ccc;
+}
+.form_box .h3{
+	width: 100%;
+	height: 50px;
+	font-size: 18px;
+	color: #770000;
+	line-height: 50px;
+	border-bottom:3px solid #770000; 
+}
+.form_box .h3 span{
+	height: 20px;
+	margin:0 10px 0 10px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 4px;
+	background-color: #770000;
+}
+#form{
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+#form h3{
+	width: 100%;
+	height: 20px;
+	color: #999;
+}
+#form h3 a:hover{
+	color: #770000;
+}
+#form label{
+	width: 100px;
+	margin: 3px 0;
+	display: inline-block;
+}
+#form input{
+	width: 200px;
+	height: 40px;
+	margin: 3px 0;
+}
+#form [type="button"]{
+	width: 110px;
+	text-align: center;
+	line-height: 20px;
+	margin: 10px 0;
+	font-size: 16px;
+	border-radius: 6px;
+	display: block;
+	background-color: #770000;
+	color: #fff;
+	border: 0;
+}
+.point{
+	color:orange;
+}
+#form #span{
+	width: 190px;
+	height: 20px;
+	display: inline-block;
+}
+#form #span span{
+	width: 30.33%;
+	height: 20px;
+	text-align: center;
+	background: #fff;
+	float: left;
+	border: 1px solid #ccc;
+}
+#form #span span:nth-of-type(1),
+#form #span span:nth-of-type(2){
+	border-right: 0;
+}
+#form #code{
+	float: left;
+	width: 100px;
+	height: 28px;
+	margin: 0;
+}
+
+[for = "code"],[for = "code"]+span{float: left;}
+#form #codes{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	background-color: pink;
+	margin-left: 5px;
+	color: #fff;
+	text-align: center;
+	width: 80px;
+}

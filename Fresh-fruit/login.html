@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会员登录</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/headfoot.css">
+	<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+	<div id="header_top" class="wrap">
+		<div>
+			<a href="login.html">会员登录</a>
+			<a href="register.html">会员注册</a>
+		</div>
+		<div>
+			<a href="#">设为首页</a>
+			<a href="#">加入收藏</a>
+			<a href="#">在线留言</a>
+			<a href="#">手机站</a>
+		</div>
+	</div>
+	
+	<!-- logo -->
+	<div id="header_logo" class="wrap">
+		<h1><a href="index.html" title="首页">特色水果</a></h1>
+		<form action=""><input type="text"><i class="iconfont icon-yysousuo1"></i></form>
+		<div>
+			<a href="#"><img src="images/tmp1472805583_1290760_s.jpg" alt="" title="购物车">我的购物车<span>0</span>件商品 &gt;</a>
+		</div>
+	</div>
+	<!-- 导航 -->
+	<div id="nav" class="wrap">
+		<ul>
+			<li></li>
+			<li><a href="index.html">首页</a></li>
+			<li><a href="##">关于我们</a></li>
+			<li><a href="##">新闻中心</a></li>
+			<li><a href="html/details.html">产品中心</a></li>
+			<li><a href="##">联系我们</a></li>
+			<li><a href="##">在线留言</a></li>
+		</ul>
+	</div>
+	<!-- 登录 -->
+	<div class="form_box">
+		<div class="h3"><span></span>会员登录页</div>
+		<div>
+			<div id="form_login">
+				<h3>会员登录</h3>
+				<div>
+					<label for="name">用户名：</label><input type="text" id="name"><br/>
+					<label for="pwd">密码：</label><input type="password" id="pwd"><br/>
+				</div>
+				
+				<button id="btn">登录</button>
+			</div>
+			<div class="form_reg">
+				<p>还没有特色水果商城账号？</p>
+				<a href="register.html">会员注册</a>
+			</div>
+		</div>
+
+	</div>
+	
+	<!-- 页脚 -->
+	<div id="footer">
+		<div class="footer_links">
+			<a href="">关于我们</a>
+			<a href="">经典案例</a>
+			<a href="">新闻动态</a>
+			<a href="">服务项目</a>
+			<a href="">咨询团队</a>
+			<a href="">联系我们</a>
+		</div>
+		<p>蜀ICP备17041164</p>
+		<p>www.tssgsc.com</p>
+	</div>
+	<!-- 分享到 -->
+	<div id="block">
+		<div class="tit"><span>分</span><span>享</span></div>
+		<h4>分享到</h4>
+		<div class="block_link">
+			<a href=""><img src="http://static.bshare.cn/frame/images/logos/s4/weixin.png" alt=""><span>一键分享</span></a>
+			<a href=""><img src="http://static.bshare.cn/frame/images/logos/s4/weixin.png" alt=""><span>一键分享</span></a>
+		</div>
+		<div class="block_footer"><a href="">+更多</a></div>
+	</div>
+	<!-- js文件 -->
+	<script type="text/javascript" src = "js/headfoot.js?new Date()"></script>
+	<script type="text/javascript" src="js/ajax.js?new Date()"></script>
+	<script>
+	var uname = document.getElementById("name"); 
+	var upwd = document.getElementById("pwd"); 
+	var btn = document.getElementById("btn"); 
+
+	btn.onclick=function(){
+
+		 ajax("post","http://localhost/work/Fresh-fruit/php/login.php",{uname:uname.value,upassword:upwd.value},function(data){
+		 		if(data.status==1){
+		 			alert(data.info);
+		 			location.href = "index.html";
+		 		}else if(data.status==2){
+		 			alert(data.info);
+		 			location.href = "login.html";
+		 		}else{
+		 			alert(data.info);
+		 		}
+		 });
+	}
+	
+	</script>
+</body>
+</html>
