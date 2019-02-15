@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+	<link rel="stylesheet" href="../css/common/reset.css">
+	<link rel="stylesheet" href="../css/common/login.css?new Date()">
+</head>
+<body>
+	<div id="bg">
+		<div id="form">
+			<h2><a href="">依谷网</a></h2>
+			<div class="tab">
+				<div><span class="l">登录</span><span class="r">已有账号<a href="register.html">注册</a></span></div>
+				<div class="vbox">
+					<label for="tel"><img src="http://localhost/work/yigu/src/img/common/register_04.png" alt=""></label><input type="text" placeholder="手机号/用户名" id="tel" name = "tel"><span class="validation">eewtreyr</span><br/>
+				</div>
+				<div class="vbox">
+					<label for="pwd"><img src="http://localhost/work/yigu/src/img/common/register_02.png" alt=""></label><input type="text" placeholder="密码" id="pwd" name="pwd"><span class="validation"></span><br/>
+				</div>
+				<div class="vbox">
+					<label for="code">验证码</label><input type="text" placeholder="请输入验证码" id="code"><span id="codes"></span><span class="validation"></span><br/>
+				</div>
+				<input type="checkbox"><span>记住我</span><a href="http://www.egu365.com/users/member/toReg.action#" class="forget">忘记密码？</a><br/>
+				<button id="loginbtn">登录</button>
+				<span class="line"></span><a>第三方登录</a><span class="line"></span>
+				<div class="img">
+					<a href="http://www.egu365.com/web/wbLogin.action"><img src="http://localhost/work/yigu/src/img/common/login_sina.png" alt=""></a>
+					<a href="https://graph.qq.com/oauth2.0/authorize?client_id=101225372&response_type=token&scope=all&redirect_uri=http%3A%2F%2Fwww.egu365.com%2Fqq%2Flogined.html"><img src="http://localhost/work/yigu/src/img/common/login_qq.png" alt=""></a>
+					<a href="http://www.egu365.com/web/wxlogin.action"><img src="http://localhost/work/yigu/src/img/common/login_dou.png" alt=""></a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<script src="../js/js/common/toolkit.js"></script>
+	<script src="../js/lib/jquery-1.11.3.js"></script>
+	<script src="../js/js/common/login.js"></script>
+</body>
+</html>

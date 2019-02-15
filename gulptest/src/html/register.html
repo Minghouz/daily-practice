@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会员注册</title>
+	<link rel="stylesheet" href="../css/common/reset.css">
+	<link rel="stylesheet" href="../css/common/register.css?new Date()">
+</head>
+<body>
+	<div id="bg">
+		<div id="form">
+			<h2><a href="">依谷网</a></h2>
+			<div class="tab">
+				<div><span>注册</span><span>已有账号<a href="login.html">登录</a></span></div>
+				<div class="vbox">
+					<label for="tel"><img src="http://localhost/work/yigu/src/img/common/register_04.png" alt=""></label><input type="text" placeholder="请输入手机号" id="tel"><span class="validation">dswew</span><br/>
+				</div>
+				<div class="vbox">
+					<label for="pwd"><img src="http://localhost/work/yigu/src/img/common/register_02.png" alt=""></label><input type="text" placeholder="请输入密码" id="pwd"><span class="validation"></span><br/>
+				</div>
+				<div class="vbox">
+					<label for="repwd"><img src="http://localhost/work/yigu/src/img/common/register_02.png" alt=""></label><input type="text" placeholder="请输入确认密码" id="repwd"><span class="validation"></span><br/>
+				</div>
+				<div class="vbox">
+					<label for="code"><img src="http://localhost/work/yigu/src/img/common/register_05.png" alt=""></label><input type="text" placeholder="请输入验证码" id="code"><span id="codes"></span><span class="validation"></span><br/>
+				</div>
+				
+				<input type="checkbox"><span>同意<a href="http://www.egu365.com/users/member/toReg.action#">依谷网服务协议</a></span><br/>
+				<button id="regbtn">完成</button>
+			</div>
+			
+		</div>
+	</div>
+	<script src="../js/js/common/toolkit.js"></script>
+	<script src="../js/lib/jquery-1.11.3.js"></script>
+	<script src="../js/js/common/register.js"></script>
+</body>
+</html>

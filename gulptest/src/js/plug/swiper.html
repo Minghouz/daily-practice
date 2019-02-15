@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>swiper轮播图</title>
+    <link rel="stylesheet" href="css/swiper.css">
+    <style>
+        .swiper-container {
+            width: 500px;
+            height: 332px;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4219870749,3877872925&fm=200&gp=0.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1577092744,507850491&fm=200&gp=0.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1117286566,3853373127&fm=200&gp=0.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1820399383,3116989674&fm=27&gp=0.jpg" alt="">
+        </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+</body>
+</html>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/swiper.js"></script>
+<script>
+new Swiper ('.swiper-container', {
+        loop: true,
+        autoplay:true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        effect:'cube'
+    })
+</script>
